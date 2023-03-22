@@ -1,3 +1,4 @@
+import CallOut from 'components/shared/CallOut'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 import { Header } from 'components/shared/Header'
 import IconPicker from 'components/shared/IconPicker'
@@ -24,7 +25,10 @@ export function Page({ data }: { data: PagePayload }) {
 
         {/* Dynamic Component */}
         <IconPicker className='text-5xl' provider='ai' name={title == "Test Page" ? 'AiOutlineCheckCircle' : 'AiOutlineCloseCircle'} />
-
+        
+        
+        {/* Static Component With next/link */}
+        <CallOut />
         {/* Workaround: scroll to top on route change */}
         <ScrollUp />
       </div>
