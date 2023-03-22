@@ -25,7 +25,7 @@ export default async function IndexRoute() {
       </div>
       
       {/* bring back HomePage component and poison is fixed */}
-      {/* <HomePage data={data} /> */}
+      <HomePage data={data} />
 
     </>
   )
