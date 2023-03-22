@@ -1,5 +1,6 @@
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 import { Header } from 'components/shared/Header'
+import IconPicker from 'components/shared/IconPicker'
 import ScrollUp from 'components/shared/ScrollUp'
 import type { PagePayload } from 'types'
 
@@ -20,6 +21,9 @@ export function Page({ data }: { data: PagePayload }) {
             value={body}
           />
         )}
+
+        {/* Dynamic Component */}
+        <IconPicker className='text-5xl' provider='ai' name={title == "Test Page" ? 'AiOutlineCheckCircle' : 'AiOutlineCloseCircle'} />
 
         {/* Workaround: scroll to top on route change */}
         <ScrollUp />
