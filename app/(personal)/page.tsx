@@ -7,34 +7,26 @@ import { getPreviewToken } from 'lib/sanity.server.preview'
 import { notFound } from 'next/navigation'
 
 export default async function IndexRoute() {
-  const token = getPreviewToken()
-  const data = (await getHomePage({ token })) || {
+
+  const data = (await getHomePage({ })) || {
     title: '',
     overview: [],
     showcaseProjects: [],
   }
 
-  if (!data && !token) {
+  if (!data ) {
     notFound()
   }
 
   return (
     <>
-      {token ? (
-        <>
-          <PreviewSuspense
-            fallback={
-              <PreviewWrapper>
-                <HomePage data={data} />
-              </PreviewWrapper>
-            }
-          >
-            <HomePagePreview token={token} />
-          </PreviewSuspense>
-        </>
-      ) : (
-        <HomePage data={data} />
-      )}
+      <div>
+        homepage
+      </div>
+      
+      {/* bring back HomePage component and poison is fixed */}
+      {/* <HomePage data={data} /> */}
+
     </>
   )
 }
